@@ -8,16 +8,14 @@ import LoginForm from "../Components/LoginForm";
 import Navbar from "../Components/NavBar";
 export default function Auth() {
   return (
-    <>
-      <div className="flex">
-        <div className="w-1/3">
-          <Navbar />
-        </div>
-
-        <div className="w-2/3">
-          <LoginForm />
-        </div>
+    <div className="flex">
+      <div className="w-1/3 bg-gray-900 h-screen p-6">
+        <Navbar />
       </div>
-    </>
+
+      <div className="w-2/3 p-6 bg-gray-100">
+        <LoginForm />
+      </div>
+    </div>
   );
 }
