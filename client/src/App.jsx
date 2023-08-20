@@ -1,39 +1,34 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
-import Auth from "./Pages/Auth";
-import User from "./Pages/User";
-import Root from "./Pages/Root";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import LoginPage from "./Pages/LoginPage";
+import HomePage from "./Pages/HomePage";
+import UserPage from "./Pages/UserPage";
+import RootPage from "./Pages/RootPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
-    id: "root",
-    loader: tokenLoader, ////TODO
+    element: <RootPage />,
     children: [
-      { index: true, element: <Home /> },
       {
-        path: "user",
-        element: <User />,
-        loader: checkAuthLoader, /////TODO
+        path: "/login",
+        element: <LoginPage />,
       },
       {
-        path: "login",
-        element: <Auth />,
-        action: authAction,
+        path: "/",
+        element: <HomePage />,
       },
       {
-        path: "logout",
-        action: logoutAction, /////TODO
+        path: "/user",
+        element: <UserPage />,
       },
     ],
   },
 ]);
 
-function App() {
-  return <RouterProvider router={router} />;
+export default function App() {
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
-
-export default App;

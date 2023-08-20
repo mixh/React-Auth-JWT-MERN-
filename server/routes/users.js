@@ -39,7 +39,7 @@ router.post("/login", async (req, res, next) => {
   }
 
   const token = sign({ email: user.email }, KEY, { expiresIn: "1h" });
-  res.json({ token });
+  res.json({ email: email, token: token });
 });
 
 router.get("/", async (req, res, next) => {
