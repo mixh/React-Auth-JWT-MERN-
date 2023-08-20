@@ -26,22 +26,9 @@ export default function Root() {
 
   return (
     <>
-      {!token && (
-        <div className="flex">
-          <div className="w-1/3">
-            <Navbar />
-          </div>
-
-          <div className="w-2/3">
-            <Outlet />
-          </div>
-        </div>
-      )}
-      {token && (
-        <div>
-          <Outlet />
-        </div>
-      )}
+      <div>
+        <Outlet />
+      </div>
     </>
   );
 }

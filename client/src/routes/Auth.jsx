@@ -5,10 +5,19 @@
 // ... create a logout post link which sends it to an action that removes localStorage token and then redirects to /auth
 
 import LoginForm from "../Components/LoginForm";
+import Navbar from "../Components/NavBar";
 export default function Auth() {
   return (
     <>
-      <LoginForm />
+      <div className="flex">
+        <div className="w-1/3">
+          <Navbar />
+        </div>
+
+        <div className="w-2/3">
+          <LoginForm />
+        </div>
+      </div>
     </>
   );
 }
